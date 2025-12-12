@@ -3,7 +3,7 @@
 char* reverse(char str_1[]);
 
 int main(){
-
+    
     char text[50] = " HoLa Amigo";
 
     char *out;
@@ -14,21 +14,30 @@ int main(){
 }
 
 char* reverse(char str_1[]){
-
-    static char str_2[50]; // Static จะไม่โดนลบตอนฟังก์จบ
+    
+    static char str_2[50]; 
 
     int i, j;
 
-    for(i = 0; str_1[i] != '\0'; i++); //หาความยาวstring
+    int len = 0; 
 
-    j = i - 1;
+    i = 0;
+
+    while (str_1[i] != '\0') {
+
+        i++;
+    }
+    
+    len = i;   
+
+    j = len - 1; 
 
     for(i = 0; j >= 0; i++, j--){
 
         str_2[i] = str_1[j];
     }
 
-    str_2[i] = '\0';
+    str_2[i] = '\0'; 
 
     printf("Reversed string: %s\n", str_2);
 
