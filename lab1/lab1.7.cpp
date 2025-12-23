@@ -1,43 +1,44 @@
 #include <stdio.h>
 
-#include <windows.h>
-
-
-
 int main() {
-    SetConsoleOutputCP(65001); //รันแล้วจะได้อ่านภาษาไทยได้
-    int customerType;
 
-    float consumption_kwh, totalBill = 0.0;
+    int cType;
 
-    printf("Enter Customer Type (1 for ครัวเรือน, 2 for ธุรกิจ and Consumption in kWh: ");
+    float unit, bill = 0.0;
 
-    scanf("%d %f", &customerType, &consumption_kwh);
+ 
+    if (scanf("%d %f", &cType, &unit) != 2) {
 
-    if (customerType == 1) {
-       
-        if (consumption_kwh <= 100) {
+        return 1; 
 
-            totalBill = consumption_kwh * 3.0;
+    }
 
-        } else {
-           
-            totalBill = consumption_kwh * 4.0;
-        }
+    
+    if (cType == 1) {
+    
+        if (unit <= 100) {
 
-        printf("Total Bill: %.2f\n", totalBill);
-
-    } else if (customerType == 2) {
-        
-        if (consumption_kwh <= 500) {
-
-            totalBill = consumption_kwh * 5.0;
-        } else {
+            bill = unit * 3.0;
             
-            totalBill = consumption_kwh * 6.5;
+        } else {
+
+            bill = unit * 4.0;
+        }
+        
+        printf("Total Bill: %.2f\n", bill);
+
+    } else if (cType == 2) {
+        
+        if (unit <= 500) {
+
+            bill = unit * 5.0;
+
+        } else {
+
+            bill = unit * 6.5;
         }
 
-        printf("Total Bill: %.2f\n", totalBill);
+        printf("Total Bill: %.2f\n", bill);
 
     } else {
         
