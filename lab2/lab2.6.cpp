@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main() {
+
+    int N_months, month, successCount = 0;
+
+    float dailyDeposit, monthlyTotal;
+
+    
+    if (scanf("%d", &N_months) != 1) {
+
+        return 1;
+    }
+
+    for (month = 1; month <= N_months; month++) {
+        
+        monthlyTotal = 0.0;
+
+        
+        if (scanf("%f", &dailyDeposit) != 1) {
+
+            break;
+        }
+
+        
+        while (dailyDeposit != 0.00) {
+            
+            monthlyTotal += dailyDeposit;
+
+           
+            if (scanf("%f", &dailyDeposit) != 1) {
+
+                break;
+            }
+        }
+
+        
+        if (monthlyTotal >= 500.00) {
+
+            successCount++;
+        }
+
+        printf("Month %d Total: %.2f\n", month, monthlyTotal);
+        
+    }
+
+    
+    printf("Success Count: %d\n", successCount);
+
+    return 0;
+}
