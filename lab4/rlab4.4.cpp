@@ -70,6 +70,8 @@ void gonext1(struct studentnode **walk){
         
         *walk = (*walk)->next; 
 
+        printf("test:%s\n", (*walk)->name);
+
     } else {
 
         printf("End of list\n");
